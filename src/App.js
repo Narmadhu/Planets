@@ -2,21 +2,28 @@ import React from "react";
 import "./App.css";
 import Nav from "./Nav";
 import Planets from "./tabs/tab1";
-import FovouriteList from "./tabs/tab2";
+import FavouriteList from "./tabs/tab2";
+import { PlanetProvider, FavProvider, FavListProvider } from "./planetContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Nav />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/planets" component={Planets} />
-          <Route path="/favouriteList" component={FovouriteList} />
-        </Switch>
-      </div>
-    </Router>
+    <FavProvider>
+      <FavListProvider>
+        <PlanetProvider>
+          <Router>
+            <div className="App">
+              <Nav />
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/planets" component={Planets} />
+                <Route path="/favouriteList" component={FavouriteList} />
+              </Switch>
+            </div>
+          </Router>
+        </PlanetProvider>
+      </FavListProvider>
+    </FavProvider>
   );
 }
 

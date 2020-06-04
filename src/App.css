@@ -16,3 +16,10 @@ nav {
   cursor: pointer;
   font-weight: bold;
 }
+.star {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.star:hover {
+  opacity: 1;
+}

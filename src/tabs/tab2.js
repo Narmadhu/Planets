@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { PlanetContext, FavContext, FavListContext } from "../planetContext";
+import Planets from "./tab1";
 
-function FovouriteList() {
+function FavouriteList() {
+  const [items, setItems] = useContext(PlanetContext);
+  const [isFavourite, setIsFavourite] = useContext(FavContext);
+  const [listOfFav, setListOfFav] = useContext(FavListContext);
+
   return (
     <div>
-      <h3>Favourite List</h3>
+      {listOfFav.map((list) => (
+        <h1>{list.item.name}</h1>
+      ))}
     </div>
   );
 }
 
-export default FovouriteList;
+export default FavouriteList;
