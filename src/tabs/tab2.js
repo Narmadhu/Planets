@@ -13,7 +13,7 @@ function FavouriteList() {
       <div className="favList">
         <ul>
           {listOfFav.map((list) => (
-            <li> {list.item.name}</li>
+            <li key={list.item.id}>{list.item.name}</li>
           ))}
         </ul>
       </div>

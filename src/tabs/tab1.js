@@ -13,12 +13,8 @@ function Planets({ img }) {
   const [items, setItems] = useContext(PlanetContext);
   const [isFavourite, setIsFavourite] = useContext(FavContext);
   const [listOfFav, setListOfFav] = useContext(FavListContext);
-  const [isYelllow, setYellow] = useState(false);
-
-  const changeColor = () => {
-    setYellow(!isYelllow);
-  };
-
+  // const [isYellow, setYellow] = useState(false);
+  // const flag = false;
   return (
     <div className="items-background">
       <img src={img} alt="" />
@@ -29,12 +25,11 @@ function Planets({ img }) {
 
             <FiStar
               id="star"
-              className={isYelllow ? "yellow" : ""}
               onClick={() => {
                 item.isFavourite = !isFavourite;
                 setListOfFav([{ item }, ...listOfFav]);
-                changeColor();
               }}
+              className={item.isFavourite ? "yellow" : ""}
             />
           </h2>
         ))}
