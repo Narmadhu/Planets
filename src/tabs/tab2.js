@@ -8,10 +8,12 @@ function FavouriteList() {
   const [listOfFav, setListOfFav] = useContext(FavListContext);
 
   return (
-    <div>
-      {listOfFav.map((list) => (
-        <h1>{list.item.name}</h1>
-      ))}
+    <div className="favList">
+      <ul>
+        {listOfFav.map((list) => (
+          <li> {list.item.name}</li>
+        ))}
+      </ul>
     </div>
   );
 }

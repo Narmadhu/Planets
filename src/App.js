@@ -30,7 +30,7 @@ function App() {
 const Home = () => {
   return (
     <div>
-      <h1>Homepage</h1>
+      <h1>Welcome</h1>
     </div>
   );
 };
